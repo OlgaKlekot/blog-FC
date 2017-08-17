@@ -18,20 +18,21 @@ body {
     justify-content: space-between;
     margin-bottom: 50px;
     font-size: 20px;
-    height: 400px;
 }
 .article {
     width: 40%;
     overflow: hidden;
 }
 .art {
-    height: 200px;
+    min-height: 200px;
 }
 .definite{
     font-size: 25px;
+    letter-spacing: 0.5px;
 }
 .definite .article {
     width: 100%;
+    margin-bottom: 50px;
 }
 .data {
     float: right;
@@ -172,4 +173,10 @@ label, span {
     align-content: center;
     justify-content: space-around;
     padding: 10px 40px;
+}
+.add_comment {
+    width: 100px;
+    height: 100px;
+    background-image: url("images/comment.jpg");
+    background-size: cover;
 }

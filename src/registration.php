@@ -10,9 +10,7 @@ function index() {
 function addUser() {
 
     global $app;
-
     /** @var \PDO $DBH */
-
     $DBH = $app['db'];
 
     if ($_POST['passWord'] === $_POST['confirmPassWord']) {
@@ -23,7 +21,6 @@ function addUser() {
                 ':name' => $_POST['userName'],
                 ':password' => $_POST['passWord'],
             ];
-
             $STH->execute($newUser);
             $DBH->commit();
     };

@@ -1,4 +1,4 @@
-<form action="<?= \app\core\createUrl('addUser') ?>" id="usToAdd" class="registration" name="register" method="post">
+<form action="<?= \app\core\createUrl('add_user') ?>" id="usToAdd" class="registration" name="register" method="post">
 
         <h1>Registration</h1>
 
@@ -17,5 +17,3 @@
             <input class="button" type="submit" name="register" value="Register" form="usToAdd"/>
         </div>
 </form>
-
-

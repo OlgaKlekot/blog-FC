@@ -16,32 +16,38 @@ return [
         'function' => 'app\\src\\registration\\index',
         'methods' => ['GET']
     ],
-    'addUser' => [
-        'path' => '/',
+    'add_user' => [
+        'path' => '/add_user',
         'file' => 'registration.php',
         'function' => 'app\\src\\registration\\addUser',
         'methods' => ['POST']
     ],
-    'addArticles' => [
-        'path' => '/newArticle',
+    'add_articles' => [
+        'path' => '/new_article',
         'file' => 'addArticleToDB.php',
         'function' => 'app\\src\\addArticleToDB\\index',
         'methods' => ['GET']
     ],
-    'newArticle' => [
+    'new_article' => [
         'path' => '/new',
         'file' => 'addArticleToDB.php',
         'function' => 'app\\src\\addArticleToDB\\addArticle',
         'methods' => ['POST']
     ],
-    'searchPosts' => [
-        'path' => '/',
+    'search_posts' => [
+        'path' => '/result',
         'file' => 'main.php',
         'function' => 'app\\src\\main\\index',
         'methods' => ['GET']
     ],
+    'comments' => [
+        'path' => '/{article}/{comment}',
+        'file' => 'definite_post.php',
+        'function' => 'app\\src\\definite_post\\definite',
+        'methods' => ['GET']
+    ],
     'article' => [
-        'path' => '/{article}',
+        'path' => '/{article}/',
         'file' => 'definite_post.php',
         'function' => 'app\\src\\definite_post\\definite',
         'methods' => ['GET']

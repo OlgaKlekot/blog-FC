@@ -1,15 +1,21 @@
 <div class="articles">
+
     <?php foreach ($articles as $article): ?>
+
     <div class="article">
         <a href="<?= \app\core\createUrl('article', ['article' => $article['id']]) ?>"><h3 class="title"><?= $article['title'] ?></h3></a>
         authored by <span class="author"><?= $article['username'] ?></span>
+
         <?php if (strlen($article['article_text']) > 400) {
             $article['article_text'] = substr($article['article_text'],0,400) . "...";
         } ?>
+
         <p class="art"><?= $article['article_text'] ?></p>
         <span class="data"><?= $article['creation_date'] ?></span>
     </div>
+
     <?php endforeach; ?>
+
 </div>
 
 

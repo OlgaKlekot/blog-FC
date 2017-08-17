@@ -5,9 +5,7 @@ use function app\core\renderView;
 function index() {
 
     global $app;
-
     /** @var \PDO $DBH */
-
     $DBH = $app['db'];
 
     $art_limit = 2;
@@ -42,5 +40,3 @@ function index() {
 
     return renderView(['template.php', 'posts/posts.php'], ['articles' => $result, 'str_pag' => $str_pag, 'page' => $page]);
 };
-
-

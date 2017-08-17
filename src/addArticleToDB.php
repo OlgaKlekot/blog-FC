@@ -7,13 +7,12 @@ function index() {
     return renderView(['template.php', 'pages/addArticles.php']);
 };
 
+
 function addArticle() {
+
     global $app;
-
     /** @var \PDO $DBH */
-
     $DBH = $app['db'];
-    $user_id = $app['user'];
 
     if (!empty($_POST['adding'])) {
         $DBH->beginTransaction();
@@ -26,9 +25,7 @@ function addArticle() {
             ];
 
             $STH->execute($newArticle);
-
             $DBH->commit();
-
     };
     if (isset($_POST['adding'])) {
         header("Location: http://blog.log/");
