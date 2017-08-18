@@ -3,22 +3,6 @@ namespace app\src\security;
 
 use app\core;
 
-    global $app;
-
-    /** @var \PDO $DBH */
-
-    $DBH = $app['db'];
-
-    $STH = $DBH->prepare("SELECT * FROM  users u WHERE u.username = :name");
-    $STH->bindValue(':name', $_POST['username']);
-
-    $STH->execute();
-    $result = $STH->fetchAll(\PDO::FETCH_ASSOC);
-
-
-    $app['users'] = $result;
-
-
 
 function login() {
     if (!isset($_POST['username']) || !isset($_POST['password'])) {
@@ -50,6 +34,19 @@ function logout() {
 
 function loadUserByUsername($username) {
     global $app;
+
+    /** @var \PDO $DBH */
+
+    $DBH = $app['db'];
+
+    $STH = $DBH->prepare("SELECT * FROM  users u WHERE u.username = :name");
+    $STH->bindValue(':name', $_POST['username']);
+
+    $STH->execute();
+    $result = $STH->fetchAll(\PDO::FETCH_ASSOC);
+
+    $app['users'] = $result;
+
 
     return current(array_filter($app['users'], function($user) use($username) {
         return $user['username'] == $username;

@@ -83,7 +83,6 @@ header {
     align-items: center;
     width: 80%;
     margin: auto;
-    height: 600px;
 }
 form textarea {
     background-position: 0 -27px;
@@ -174,7 +173,7 @@ label, span {
     justify-content: space-around;
     padding: 10px 40px;
 }
-.add_comment {
+.comments_btn {
     width: 100px;
     height: 100px;
     background-image: url("images/comment.jpg");

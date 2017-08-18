@@ -25,3 +25,29 @@ function definite($article, $comm = null) {
 
     return renderView(['template.php', 'posts/definite_post.php'], ['articles' => $result1, 'comments' => $result2, 'comment' => $comm]);
 };
+
+function addComment($article) {
+
+    global $app;
+    /** @var \PDO $DBH */
+    $DBH = $app['db'];
+
+    if (!empty($_POST['adding'])) {
+        $DBH->beginTransaction();
+
+        $STH = $DBH->prepare('INSERT INTO blog.comments (article_id, comment_text, user_id) VALUES (:article_id, :text, :user_id)');
+        $newArticle = [
+            ':article_id' => $article,
+            ':text' => $_POST['text'],
+            ':user_id' => $app['user']['id']
+        ];
+
+        $STH->execute($newArticle);
+        $DBH->commit();
+
+        header("Location: http://blog.log/" . $article . "/comment");
+    };
+//    if (isset($_POST['add_comment'])) {
+//        header("Location: http://blog.log{$_GET['comments']}");
+//    };
+}

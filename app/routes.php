@@ -40,6 +40,12 @@ return [
         'function' => 'app\\src\\main\\index',
         'methods' => ['GET']
     ],
+    'add_comment' => [
+        'path' => '/{article}/{comment}/add',
+        'file' => 'definite_post.php',
+        'function' => 'app\\src\\definite_post\\addComment',
+        'methods' => ['POST']
+    ],
     'comments' => [
         'path' => '/{article}/{comment}',
         'file' => 'definite_post.php',
